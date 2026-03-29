@@ -1,5 +1,5 @@
 {
-  "name": "@workspace/tic-tac-toe-web",
+  "name": "tic-tac-toe",
   "version": "0.0.0",
   "private": true,
   "type": "module",

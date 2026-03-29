@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/tic-tac-toe-web/"
+title = "Tic Tac Toe Web"
+version = "1.0.0"
+id = "artifacts/tic-tac-toe-web"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/tic-tac-toe-web/" ]
+localPort = 19552
+
+[services.development]
+run = "pnpm --filter @workspace/tic-tac-toe-web run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tic-tac-toe-web", "run", "build" ]
+publicDir = "artifacts/tic-tac-toe-web/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19552"
+BASE_PATH = "/tic-tac-toe-web/"
